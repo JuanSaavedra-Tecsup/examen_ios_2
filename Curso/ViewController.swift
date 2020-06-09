@@ -38,13 +38,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let numberExamen = (curso.examen! as NSString).doubleValue
         
         if numberExamen>=13.00{
-            func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-                cell.backgroundColor = UIColor.green
-            }
+            cell.backgroundColor = UIColor.green
+            
         }else if numberExamen<13.00{
-            func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-                cell.backgroundColor = UIColor.red
-            }
+            cell.backgroundColor = UIColor.red
+            
         }
         
         
@@ -65,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do{
             cursos = try context.fetch(Curso.fetchRequest()) as! [Curso]
         }catch{
-            print("HA OCURRIDO UN ERROR")
+            print("Ha ocurrido un error")
         }
     }
     
